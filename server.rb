@@ -20,5 +20,11 @@ end
 get "/show_movies" do
 	@movies = quiz.movies
 	@question = quest.question1(@movies)
+	@answer = [quest.answer, quest.is_ok]
 	erb :showMovies
+end
+
+post "/answer/:answer" do
+	quest.answer_to_question(params[:answer])
+	redirect "/show_movies"
 end

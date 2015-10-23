@@ -13,21 +13,62 @@
 	</div>
 
 	<hr>
+	<% if (@answer[0] != nil) && (@answer[1] != nil) %>
+	<div><center><h2>You are <% if  @answer[1] == true%> 
+	<strong>RIGHT</strong> 
+	<%else%>
+	<strong>WRONG</strong>
+	<%end%> 
+	The correct answer is <%= @answer[0].title %></h2></center></div>
+	<% end %>
+
+	<hr>
 
 	<div style="display:block">
-	<img src=<%= @movies[0].poster %>>
-	<img src=<%= @movies[1].poster %>>
-	<img src=<%= @movies[2].poster %>> <br>
-	<img src=<%= @movies[3].poster %>>
-	<img src=<%= @movies[4].poster %>>
-	<img src=<%= @movies[5].poster %>> <br>
-	<img src=<%= @movies[6].poster %>>
-	<img src=<%= @movies[7].poster %>>
-	<img src=<%= @movies[8].poster %>>
+	
+	<form style="display:inline" action="/answer/<%= @movies[0].release_date %>" method="POST">
+		<button type="submit"><img src=<%= @movies[0].poster %>></button>
+	</form>
+
+	<form style="display:inline" action="/answer/<%= @movies[1].release_date%>" method="POST">
+		<button type="submit"><img src=<%= @movies[1].poster %>></button>
+	</form>
+	
+	<form style="display:inline" action="/answer/<%= @movies[2].release_date%>" method="POST">
+	<button type="submit"><img src=<%= @movies[2].poster %>></button> 
+	</form> <br>
+
+	<form style="display:inline" action="/answer/<%= @movies[3].release_date%>" method="POST">
+	<button type="submit"><img src=<%= @movies[3].poster %>></button>
+	</form>
+
+	<form style="display:inline" action="/answer/<%= @movies[4].release_date%>" method="POST">
+	<button type="submit"><img src=<%= @movies[4].poster %>></button>
+	</form>
+
+	<form style="display:inline" action="/answer/<%= @movies[5].release_date%>" method="POST">
+	<button type="submit"><img src=<%= @movies[5].poster %>></button>
+	</form> <br>
+
+	<form style="display:inline" action="/answer/<%= @movies[6].release_date%>" method="POST">
+	<button type="submit"><img src=<%= @movies[6].poster %>></button>
+	</form>
+
+	<form style="display:inline" action="/answer/<%= @movies[7].release_date%>" method="POST">
+	<button type="submit"><img src=<%= @movies[7].poster %>></button>
+	</form>
+
+	<form style="display:inline" action="/answer/<%= @movies[8].release_date%>" method="POST">
+	<button type="submit"><img src=<%= @movies[8].poster %>></button>
+	</form>
+
 	</div>
+
 	<hr>
+
 	<form action="/" method="GET">
-			<button type="submit">Go back</button>
-		</form>
+		<button type="submit">Go back</button>
+	</form>
+
 </body>
 </html>
