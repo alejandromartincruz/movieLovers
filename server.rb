@@ -3,9 +3,10 @@ require "sinatra/reloader"
 require "pry"
 
 require_relative "./models/quizMovies.rb"
+require_relative "./models/questions.rb"
+
 quiz = QuizMovies.new
-#@word = ""
-#@@movies = []
+quest = Questions.new
 
 get "/"  do
 	erb :home
@@ -18,5 +19,6 @@ end
 
 get "/show_movies" do
 	@movies = quiz.movies
+	@question = quest.question1(@movies)
 	erb :showMovies
 end

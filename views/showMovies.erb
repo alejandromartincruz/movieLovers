@@ -6,7 +6,14 @@
 	<title>The movies game</title>
 	<link rel="STYLESHEET" type="text/css" href="file.css"></link> 
 </head>
+
 <body>
+	<div>
+		<h1><%= @question %>?</h1>
+	</div>
+
+	<hr>
+
 	<div style="display:block">
 	<img src=<%= @movies[0].poster %>>
 	<img src=<%= @movies[1].poster %>>
@@ -18,5 +25,9 @@
 	<img src=<%= @movies[7].poster %>>
 	<img src=<%= @movies[8].poster %>>
 	</div>
+	<hr>
+	<form action="/" method="GET">
+			<button type="submit">Go back</button>
+		</form>
 </body>
 </html>
